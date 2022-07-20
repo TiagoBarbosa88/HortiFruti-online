@@ -21,8 +21,6 @@ export default function initModal() {
   }
 }
 
-console.log("oi");
-
 // Primeiro metodo de fazer funcao
 
 /* if (botaoAbrir && botaoFechar && containerModal) {
