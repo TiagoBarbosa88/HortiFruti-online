@@ -9,16 +9,28 @@ export default function initModal() {
       containerModal.classList.toggle("ativo");
     }
 
-    function cliqueForaModal(event) {
-      if (event.target === this) {
-        toggleModal(event);
-      }
-    }
-
-    botaoAbrir.addEventListener("click", toggleModal);
-    botaoFechar.addEventListener("click", toggleModal);
-    containerModal.addEventListener("click", cliqueForaModal);
+ if (botaoAbrir && botaoFechar && containerModal) {
+  function abrirModal(event) {
+      event.preventDefault();
+      containerModal.classList.add('ativo');
   }
+
+  function fecharModal(event) {
+      event.preventDefault();
+      containerModal.classList.remove('ativo')
+  }
+
+  function cliqueForaModal(event) {
+      if (event.target === this) {
+          fecharModal(event);
+      }
+
+  }
+
+  botaoAbrir.addEventListener('click', abrirModal);
+  botaoFechar.addEventListener('click', fecharModal);
+  containerModal.addEventListener('click', cliqueForaModal)
+} 
 }
 
 // Primeiro metodo de fazer funcao

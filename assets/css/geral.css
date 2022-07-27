@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Mulish:ital,wght@0,700;1,200;1,400;1,600&family=Roboto:ital,wght@0,100;0,400;1,700&display=swap");
 @import url("https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css");
 
+* {
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+}
 body {
   min-width: 372px;
 }
@@ -55,4 +61,19 @@ label .text-dark {
 
 fieldset.row .form-floating > label {
   margin-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
+[data-semana]::after {
+  display: inline-block;
+  content: "";
+  background: #3f4;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-left: 4px;
+  border: 1px solid black;
+}
+
+[data-semana].aberto::after {
+  background: #3f4;
 }
